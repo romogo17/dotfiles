@@ -11,13 +11,14 @@ brew "moreutils"
 brew "findutils"
 brew "bash" # Latest Bash version
 brew "wget"
-brew "vim", args: ["with-override-system-vi"]
+brew "vim"
 brew "grep"
 brew "gnupg"
 brew "bat" # "cat" on steroids
 brew "youtube-dl"
 brew "telnet"
 brew "watchman"
+brew "tesseract-lang"
 brew "ffmpeg"
 brew "zlib"
 brew "pandoc"
@@ -62,20 +63,16 @@ brew "protobuf"
 brew "golang"
 brew "boost"
 
-# Development
-brew "mysql"
-brew "nginx"
-brew "node"
-
 # Apps
 cask "minikube"
 cask "minishift"
 cask "1password"
 cask "docker"
-cask "google-backup-and-sync"
-cask "google-chrome"
-cask "slack"
+# cask "google-backup-and-sync"
+# cask "google-chrome"
+# cask "slack"
 cask "the-unarchiver"
+
 # cask "alfred"
 # cask "bartender"
 # cask "caffeine"
@@ -89,7 +86,7 @@ cask "qlmarkdown"
 cask "quicklook-json"
 
 # Mac App Store
-mas "Giphy Capture", id: 668208984
+# mas "Giphy Capture", id: 668208984
 mas "Magnet", id: 441258766
 # mas "Spark", id: 1176895641 # https://sparkmailapp.com/
 # mas "Things", id: 904280696 # https://culturedcode.com/things/
