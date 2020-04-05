@@ -4,16 +4,20 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "bazelbuild/tap"
+tap "beeftornado/rmtree"
 
 # Utilities
 brew "coreutils" # Those that come with macOS are outdated
 brew "moreutils"
 brew "findutils"
 brew "bash" # Latest Bash version
+brew "bash-completion"
 brew "wget"
 brew "vim"
 brew "grep"
 brew "gnupg"
+brew "pinentry-mac" # needed as gpg agent
 brew "bat" # "cat" on steroids
 brew "youtube-dl"
 brew "telnet"
@@ -30,6 +34,9 @@ brew "mackup"
 brew "trash" # Manage trash bin
 brew "mas" # Mac App Store manager
 brew "tree" # List directories in a tree structure
+brew "hyperfine" # A command-line benchmarking tool.
+brew "asciinema" # Solution for recording terminal sessions and sharing them on the web.
+brew "rmtree" # Solution for recording terminal sessions and sharing them on the web.
 
 # Navigation and search
 brew "autojump"
@@ -47,32 +54,33 @@ brew "git-flow"
 brew "hub" # A command-line tool that makes git easier to use with GitHub
 brew "gh" # GitHub’s official command line tool
 
-# Kubernetes
+# Cloud Native
 brew "kubernetes-cli"
 brew "openshift-cli"
-
-# Cloud
 brew "awscli"
 
 # Development
 brew "yarn"
 brew "autoconf"
+brew "automake"
 brew "pkg-config"
 brew "clang-format"
 brew "protobuf"
 brew "golang"
 brew "boost"
+brew "bazelbuild/tap/bazel"
+brew "kompose"
+brew "kops"
 
 # Apps
 cask "minikube"
 cask "minishift"
 cask "1password"
 cask "docker"
+cask "the-unarchiver"
 # cask "google-backup-and-sync"
 # cask "google-chrome"
 # cask "slack"
-cask "the-unarchiver"
-
 # cask "alfred"
 # cask "bartender"
 # cask "caffeine"
@@ -86,7 +94,6 @@ cask "qlmarkdown"
 cask "quicklook-json"
 
 # Mac App Store
-# mas "Giphy Capture", id: 668208984
 mas "Magnet", id: 441258766
 # mas "Spark", id: 1176895641 # https://sparkmailapp.com/
 # mas "Things", id: 904280696 # https://culturedcode.com/things/

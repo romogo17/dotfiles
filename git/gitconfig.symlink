@@ -1,0 +1,13 @@
+[include]
+	path = ~/.gitconfig.local
+[color]
+	ui = auto
+[core]
+	editor = code
+	excludesfile = ~/.gitignore
+[credential]
+	helper = osxkeychain
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true

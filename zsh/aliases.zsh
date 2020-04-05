@@ -9,6 +9,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias zshconfig="code ~/.zshrc"
 alias reloadshell="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias cls="clear"
 
 alias g="git"
 alias k="kubectl"
