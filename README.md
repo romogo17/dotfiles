@@ -14,7 +14,8 @@ Since we're starting from scratch with a fresh setup, make sure you don't forget
   ```
 - Save all important documents from non-iCloud or non-synced directories (pictures, photos, research articles, learning folders/courses, etc.)
 - Save all of your work from apps which aren't synced
-- Update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`
+- **TODO**: Update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`
+- Backup any needed `ssh` keys
 
 > 📌 **Note**: When installing these dotfiles for the first time you'll need to backup all of your settings with Mackup. Install Mackup (`brew install mackup`) and backup your settings (`mackup backup`). If you want to save your settings to a different directory or different storage than iCloud, [checkout the documentation](https://github.com/lra/mackup/blob/master/doc/README.md#storage). Also make sure your `.zshrc` file is symlinked from your dotfiles repo to your home directory.
 
@@ -28,12 +29,16 @@ If you did all of the above you may now follow these install instructions to set
 
 1. Update macOS to the latest version with the App Store
 2. Install macOS Command Line Tools by running `xcode-select --install`
-3. Copy your public and private SSH keys to `~/.ssh` and make sure they're set to `600`
-4. Clone this repo to `~/.dotfiles`
-5. Run `./install.sh` to start the installation
-6. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
-7. Restart your computer to finalize the process
-8. Your Mac is now ready to use! 🚀✨
+3. Copy your public and private SSH keys to `~/.ssh` or generate new ones and make sure they're set to mode `600`
+4. Add your `ssh` and `gpg` keys to [GitHub](https://github.com/settings/keys)
+5. Clone this repo to `~/.dotfiles`
+    ```
+    git clone git@github.com:romogo17/dotfiles.git
+    ```
+6. Run `scripts/bootstrap.sh` to start the installation
+7. **TODO**: After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
+8. Restart your computer to finalize the process
+9. Your Mac is now ready to use! 🚀✨
 
 > 📌 **Note**: you can use a different location than `~/.dotfiles` if you want. Just make sure you also update the reference in the [`.zshrc`](./.zshrc) file.
 
@@ -42,5 +47,5 @@ If you did all of the above you may now follow these install instructions to set
 - [The original .macos script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and [Kevin Suttle's macOS Defaults project](https://github.com/kevinSuttle/MacOS-Defaults).
 - [Github does dotfiles](https://dotfiles.github.io/) project.
 - Both [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) were great sources of inspiration.
-- This dotfiles were heavily inspired by the [Getting Started with Dotfiles](https://driesvints.com/blog/getting-started-with-dotfiles/) article by [Dries Vints](https://github.com/driesvints)
+- The [Getting Started with Dotfiles](https://driesvints.com/blog/getting-started-with-dotfiles/) article by [Dries Vints](https://github.com/driesvints)
 

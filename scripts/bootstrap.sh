@@ -41,7 +41,7 @@ setup_gitconfig () {
     read -e git_authorname
     user ' - What is your git author email?'
     read -e git_authoremail
-    user ' - What is your git editor?'
+    user ' - What is your git signing key? https://help.github.com/en/github/authenticating-to-github/managing-commit-signature-verification'
     read -e git_signing_key
 
     sed -e "s/GIT_AUTHORNAME/$git_authorname/g" \
