@@ -5,7 +5,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "bazelbuild/tap"
-tap "beeftornado/rmtree"
 
 # Utilities
 brew "coreutils" # Those that come with macOS are outdated
@@ -36,7 +35,6 @@ brew "mas" # Mac App Store manager
 brew "tree" # List directories in a tree structure
 brew "hyperfine" # A command-line benchmarking tool.
 brew "asciinema" # Solution for recording terminal sessions and sharing them on the web.
-brew "rmtree" # Solution for recording terminal sessions and sharing them on the web.
 
 # Navigation and search
 brew "autojump"
