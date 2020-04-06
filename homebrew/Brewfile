@@ -71,9 +71,9 @@ brew "boost"
 brew "bazelbuild/tap/bazel"
 brew "kompose"
 brew "kops"
+brew "minikube"
 
 # Apps
-cask "minikube"
 cask "minishift"
 cask "hyper"
 cask "1password"
