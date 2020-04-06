@@ -140,31 +140,30 @@ install_dotfiles () {
   done
 }
 
+install_dependencies () {
+  # If we're on a Mac, let's install and setup homebrew.
+  if [ "$(uname -s)" == "Darwin" ]
+  then
+    info "installing dependencies"
+
+    # Set macOS defaults
+    info " - setting up macOS defaults"
+    $DOTFILES_ROOT/macos/set-defaults.sh
+
+    # Install software
+    info " - running additional install scripts"
+    for installer in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name 'install.sh' -not -path '*.git*')
+    do
+      info "    - found installer script $installer"
+      sh -c "${installer}"
+    done
+
+  fi
+}
+
 setup_gitconfig
 install_dotfiles
-
-# If we're on a Mac, let's install and setup homebrew.
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing dependencies"
-
-  # Set macOS defaults
-  info " - setting up macos defaults"
-  $DOTFILES_ROOT/macos/set-defaults.sh
-
-  # Install homebrew
-  info " - setting up homebrew"
-  $DOTFILES_ROOT/homebrew/install.sh 2>&1
-
-  # Install software
-  info " - running additional install scripts"
-  for installer in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name 'install.sh' -not -path '*.git*')
-  do
-    info "    - found installer script $installer"
-    sh -c "${installer}"
-  done
-
-fi
+install_dependencies
 
 echo ''
 success 'all installed !'

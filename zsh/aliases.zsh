@@ -25,8 +25,8 @@ alias sudo='sudo '
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+# Recursively delete `.DS_Store` files, ``.Trashes` directories and ._* files
+alias sweep="find . -name .DS_Store -type f -delete ; find . -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.

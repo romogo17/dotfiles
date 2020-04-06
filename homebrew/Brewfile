@@ -60,6 +60,8 @@ brew "openshift-cli"
 brew "awscli"
 
 # Development
+brew "ansible"
+brew "terraform"
 brew "yarn"
 brew "autoconf"
 brew "automake"
@@ -75,6 +77,7 @@ brew "kops"
 # Apps
 cask "minikube"
 cask "minishift"
+cask "hyper"
 cask "1password"
 cask "docker"
 cask "the-unarchiver"

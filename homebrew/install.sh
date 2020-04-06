@@ -5,6 +5,8 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
+pushd homebrew
+
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
 
@@ -17,11 +19,12 @@ fi
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
 brew bundle
 
 # Setup the gpg agent
-echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+echo "pinentry-program /usr/local/bin/pinentry-mac" > ~/.gnupg/gpg-agent.conf
+
+popd
 
 exit 0
 
