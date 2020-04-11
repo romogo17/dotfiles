@@ -1,0 +1,8 @@
+---
+- name: Set up macOS workstation
+  hosts: local
+  # roles:
+
+  tasks:
+  - name: Print inventory_hostname | debug
+    debug: var=inventory_hostname
