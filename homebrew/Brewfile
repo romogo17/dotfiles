@@ -54,6 +54,7 @@ brew "gh" # GitHub’s official command line tool
 
 # Cloud Native
 brew "kubernetes-cli"
+brew "kubie"
 brew "openshift-cli"
 brew "awscli"
 
@@ -87,12 +88,6 @@ cask "the-unarchiver"
 # cask "caffeine"
 # cask "imageoptim"
 # cask "postman"
-
-# Quicklook
-cask "qlcolorcode"
-cask "qlstephen"
-cask "qlmarkdown"
-cask "quicklook-json"
 
 # Mac App Store
 mas "Magnet", id: 441258766
