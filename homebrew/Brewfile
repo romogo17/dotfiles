@@ -49,6 +49,7 @@ brew "redis"
 brew "git"
 brew "git-lfs"
 brew "git-flow"
+brew "git-extras"
 brew "hub" # A command-line tool that makes git easier to use with GitHub
 brew "gh" # GitHub’s official command line tool
 
