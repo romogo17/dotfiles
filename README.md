@@ -2,7 +2,6 @@
 
 This repository contains all the 🔧 dotfiles and other configuration files needed to setup my Mac. The intention is to take the effort out of reinstalling everything in my Mac and having a fresh setup in a breeze 🚀✨
 
-## ✨ Fresh macOS setup
 
 ### 1️⃣ Before you begin
 
@@ -14,16 +13,14 @@ Since we're starting from scratch with a fresh setup, make sure you don't forget
   ```
 - Save all important documents from non-iCloud or non-synced directories (pictures, photos, research articles, learning folders/courses, etc.)
 - Save all of your work from apps which aren't synced
-- **TODO**: Update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`
 - Backup any needed `ssh` keys
 
-> 📌 **Note**: When installing these dotfiles for the first time you'll need to backup all of your settings with Mackup. Install Mackup (`brew install mackup`) and backup your settings (`mackup backup`). If you want to save your settings to a different directory or different storage than iCloud, [checkout the documentation](https://github.com/lra/mackup/blob/master/doc/README.md#storage). Also make sure your `.zshrc` file is symlinked from your dotfiles repo to your home directory.
 
 ### 2️⃣ Installing macOS cleanly
 
-After going to our checklist above and making sure you backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS version.
+After going to our checklist above and making sure you backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://support.apple.com/en-us/HT204904) to cleanly install the latest macOS version.
 
-### 3️⃣ Setting up your macOS
+### 3️⃣ Configuring macOS
 
 If you did all of the above you may now follow these install instructions to setup a new Mac.
 
@@ -32,20 +29,17 @@ If you did all of the above you may now follow these install instructions to set
 3. Copy your public and private SSH keys to `~/.ssh` or generate new ones and make sure they're set to mode `600`
 4. Add your `ssh` and `gpg` keys to [GitHub](https://github.com/settings/keys)
 5. Clone this repo to `~/.dotfiles`
-    ```
+    ```sh
     git clone git@github.com:romogo17/dotfiles.git
     ```
-6. Run `scripts/bootstrap.sh` to start the installation
-7. **TODO**: After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
+6. Run `scripts/prerequisites.sh` to setup `homebrew` and `ansible`
+7. Execute the main playbook with
+   ```sh
+   # Setup the dotfiles
+   ansible-playbook main.yml
+
+   # If you cannot run privileged commands
+   ansible-playbook main.yml --skip-tags privileged
+   ```
 8. Restart your computer to finalize the process
-9. Your Mac is now ready to use! 🚀✨
-
-> 📌 **Note**: you can use a different location than `~/.dotfiles` if you want. Just make sure you also update the reference in the [`.zshrc`](./.zshrc) file.
-
-## Thanks to...
-
-- [The original .macos script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and [Kevin Suttle's macOS Defaults project](https://github.com/kevinSuttle/MacOS-Defaults).
-- [Github does dotfiles](https://dotfiles.github.io/) project.
-- Both [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) were great sources of inspiration.
-- The [Getting Started with Dotfiles](https://driesvints.com/blog/getting-started-with-dotfiles/) article by [Dries Vints](https://github.com/driesvints)
-
+9.  Your Mac is now ready to use! 🚀✨

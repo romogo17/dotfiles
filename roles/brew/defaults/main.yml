@@ -1,0 +1,114 @@
+brew_packages:
+  # Essentials
+  - about: GNU utilities
+    name:
+      - coreutils
+      - findutils
+  - about: List contents of directories in a tree-like format
+    name: tree
+  - about: Automatic configure script builder
+    name: autoconf
+  - about: Tool for generating GNU Standards-compliant Makefiles
+    name: automake
+  - about: Manage compile and link flags for libraries
+    name: pkg-config
+  - about: Protocol buffers (Google's data interchange format)
+    name: protobuf
+  - about: Internet file retrieval and HTTP client
+    name:
+      - wget
+      - curl
+      - httpie
+  - about: Ambitious Vim-fork focused on extensibility and agility
+    name: neovim
+  - about: Terminal multiplexer
+    name: tmux
+  - about: GNU grep, egrep and fgrep
+    name: grep
+  - about: Command-line JSON processor
+    name: jq
+  - about: Port scanning utility for large networks
+    name: nmap
+    links:
+      - dest: ~/.local/bin/nc
+        src: /usr/local/bin/ncat
+  - about: Traceroute implementation using TCP packets
+    name: tcptraceroute
+  - about: CLI tool that moves files or folder to the trash
+    name: trash
+
+  # Languages
+  - about: Automate deployment, configuration, and upgrading
+    name: ansible
+  - about: Tool to build, change, and version infrastructure
+    name: terraform
+  - about: Open source programming language to build simple/reliable/efficient software
+    name: go
+  - about: Safe, concurrent, practical language
+    name: rust
+  - about: Platform built on V8 to build network applications
+    name: node@18
+  - about: Interpreted, interactive, object-oriented programming language
+    name: python@3.11
+  - about: Python dependency management tool
+    name: pipenv
+  - about: Python version management
+    name: pyenv
+  - about: Open-source build and test tool made by Google
+    name: bazel
+  - about: Next-gen compiler infrastructure
+    name: llvm
+
+  # Utility CLIs
+  - about: Command-line benchmarking tool
+    name: hyperfine
+  - about: Download YouTube videos from the command-line
+    name: youtube-dl
+
+  # Containers
+  - about: CLI used to interact with Kubernetes - 'kubectl'
+    name: kubernetes-cli
+  - about: Run local Kubernetes cluster in Docker
+    name: kind
+  - about: The package manager for Kubernetes - 'helm'
+    name: helm
+  - about: CLI used to interact with Openshift - 'oc'
+    name: openshift-cli
+  - about: Traverses a Kubernetes manifest to add, remove or update configuration options without forking
+    name: kustomize
+  - about: Podman is a daemonless container engine for developing, managing, and running OCI Containers
+    name: podman
+  - about: Tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your OCI image
+    name: dive
+  - about: CLI that allows you to easily find Kubernetes roles and cluster roles bound to any user, service account, or group name
+    name: FairwindsOps/tap/rbac-lookup
+  - about: Simple and comprehensive vulnerability/misconfiguration scanner for containers and other artifacts
+    name: aquasecurity/trivy/trivy
+  - about: A set of continuous and progressive delivery solutions for Kubernetes that are open and extensible
+    name: fluxcd/tap/flux
+
+  # AWS
+  - about: Useful for authentication to EKS from kubectl
+    name: awscli
+  - about: Useful for authentication to EKS from kubectl
+    name: aws-iam-authenticator
+  - about: A CLI tool which recommends EC2 instance types based on resource criteria like vcpus and memory
+    name: aws/tap/ec2-instance-selector
+
+  # Next Generation CLIs
+  - about: Shell extension to jump to frequently used directories
+    name: autojump
+  - about: A simple, fast and user-friendly alternative to 'find'
+    name: fd
+  - about: Command-line fuzzy finder written in Go
+    name: fzf
+  - about: Nice alternative to 'cat' (has syntax hilighting)
+    name: bat
+
+  # GUIs
+  # - about: GPU-accelerated terminal emulator
+  # name: homebrew/cask/alacritty
+
+  # Fonts
+  # - about: Free monospaced font with programming ligatures
+  #   name: homebrew/cask-fonts/font-fira-code

@@ -1,0 +1,61 @@
+- name: Ensure Git is installed
+  community.general.homebrew:
+    name:
+      - git
+      - git-lfs
+      - git-flow
+      - gh
+    state: present
+
+- name: Ensure GPG is installed
+  community.general.homebrew:
+    name:
+      - gpg2
+      - gnupg
+      - pinentry-mac
+    state: present
+
+- name: Template the .gitconfig file (default)
+  ansible.builtin.template:
+    src: gitconfig.j2
+    dest: ~/.gitconfig
+    mode: 0644
+
+- name: Template the .gitconfig file (work)
+  when:
+    - git.work.name is defined
+    - git.work.email is defined
+    - git.work.signingkey is defined
+    - git.work.dir is defined
+  ansible.builtin.template:
+    src: gitconfig-work.j2
+    dest: ~/.gitconfig-work
+    mode: 0644
+
+- name: Copy the .gitignore file
+  ansible.builtin.copy:
+    src: gitignore
+    dest: ~/.gitignore
+    mode: 0644
+
+- name: Ensure the configuration for GPG exists
+  ansible.builtin.file:
+    path: ~/.gnupg
+    state: directory
+    mode: 0700
+
+- name: GPG agent configuration
+  ansible.builtin.lineinfile:
+    path: ~/.gnupg/gpg-agent.conf
+    state: present
+    line: "pinentry-program {{ brew_prefix }}/bin/pinentry-mac"
+    create: true
+    mode: 0644
+
+- name: GPG configuration
+  ansible.builtin.lineinfile:
+    path: ~/.gnupg/gpg.conf
+    state: present
+    line: "use-agent"
+    create: true
+    mode: 0644

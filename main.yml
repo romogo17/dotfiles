@@ -1,0 +1,56 @@
+- name: Setup Dotfiles
+  hosts: localhost
+  gather_facts: yes
+
+  vars:
+
+  pre_tasks:
+    - name: Check whether Homebrew is installed
+      ansible.builtin.command: "command -v brew"
+      register: bre_installed
+      ignore_errors: yes
+      changed_when: no
+
+    - name: Assert that Homebrew is installed
+      ansible.builtin.assert:
+        that:
+          - bre_installed.rc == 0
+        fail_msg: >
+          It looks like Homebrew is not installed. Follow the instructions in the following link
+          https://brew.sh/
+
+    - name: Get the Homebrew prefix
+      ansible.builtin.command: brew --prefix
+      register: result_brew_prefix
+      changed_when: false
+
+    - name: Set fact with the brew prefix
+      ansible.builtin.set_fact:
+        brew_prefix: "{{ result_brew_prefix.stdout }}"
+
+  tasks:
+    - name: Setup Ansible
+      ansible.builtin.include_role:
+        name: ansible
+      tags:
+        - ansible
+    - name: Setup the Homebrew packages
+      ansible.builtin.include_role:
+        name: brew
+      tags:
+        - brew
+    - name: Setup the SHELL
+      ansible.builtin.include_role:
+        name: shell
+      tags:
+        - shell
+    - name: Setup Git
+      ansible.builtin.include_role:
+        name: git
+      tags:
+        - git
+    - name: Setup MacOS
+      ansible.builtin.include_role:
+        name: macos
+      tags:
+        - macos

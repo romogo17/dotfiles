@@ -1,0 +1,13 @@
+# Guide on setting up GPG in MacOs
+# https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
+
+git:
+  defaults:
+    name: Roberto Mora
+    email: romogo17@gmail.com
+    signingkey: 9BB0B0BE9A2CBAE3
+  work:
+    name: Mora, Roberto
+    email: Roberto.Mora@experian.com
+    signingkey: BF514DE4776F446F
+    dir: WDev

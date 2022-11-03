@@ -1,0 +1,21 @@
+- name: Check whether the Ansible CLI is installed
+  command: "command -v ansible"
+  register: ansible_installed
+  ignore_errors: yes
+  changed_when: no
+
+- name: Ensure Ansible is installed
+  community.general.homebrew:
+    name: ansible
+    state: present
+  when:
+    - ansible_installed.rc != 0
+
+- name: Setup the ansible configuration options
+  community.general.ini_file:
+    path: ~/.ansible.cfg
+    section: "{{ item.section | default(omit) }}"
+    option: "{{ item.option | default(omit) }}"
+    value: "{{ item.value | default(omit) }}"
+    mode: 0644
+  loop: "{{ ansible_config | json_query('[?value]') }}"

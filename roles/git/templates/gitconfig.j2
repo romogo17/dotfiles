@@ -1,0 +1,19 @@
+[user]
+    name = {{ git.defaults.name }}
+    email = {{ git.defaults.email }}
+    signingkey = {{ git.defaults.signingkey }}
+[color]
+    ui = auto
+[core]
+    editor = code
+    excludesfile = ~/.gitignore
+[credential]
+    helper = osxkeychain
+[gpg]
+    program = gpg
+[commit]
+    gpgsign = true
+{% if git.work.dir is defined %}
+[includeIf "gitdir:~/{{ git.work.dir }}/"]
+    path = ~/.gitconfig-work
+{% endif %}
