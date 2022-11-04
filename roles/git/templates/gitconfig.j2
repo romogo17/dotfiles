@@ -13,6 +13,8 @@
     program = gpg
 [commit]
     gpgsign = true
+[init]
+    defaultBranch = main
 {% if git.work.dir is defined %}
 [includeIf "gitdir:~/{{ git.work.dir }}/"]
     path = ~/.gitconfig-work
