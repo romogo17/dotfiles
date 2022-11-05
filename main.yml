@@ -39,11 +39,11 @@
         name: brew
       tags:
         - brew
-    - name: Setup the SHELL
+    - name: Setup the Terminal
       ansible.builtin.include_role:
-        name: shell
+        name: terminal
       tags:
-        - shell
+        - terminal
     - name: Setup Git
       ansible.builtin.include_role:
         name: git

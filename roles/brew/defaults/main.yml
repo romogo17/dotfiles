@@ -105,10 +105,11 @@ brew_packages:
   - about: Nice alternative to 'cat' (has syntax hilighting)
     name: bat
 
+brew_casks:
   # GUIs
-  # - about: GPU-accelerated terminal emulator
-  # name: homebrew/cask/alacritty
+  - about: GPU-accelerated terminal emulator
+    name: homebrew/cask/alacritty
 
   # Fonts
-  # - about: Free monospaced font with programming ligatures
-  #   name: homebrew/cask-fonts/font-fira-code
+  - about: Free monospaced font with programming ligatures
+    name: homebrew/cask-fonts/font-fira-code
