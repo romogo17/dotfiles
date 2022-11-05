@@ -18,11 +18,10 @@ brew_packages:
     name:
       - wget
       - curl
-      - httpie
   - about: Ambitious Vim-fork focused on extensibility and agility
     name: neovim
-  - about: Terminal multiplexer
-    name: tmux
+  - about: Fast, highly customisable system info script
+    name: neofetch
   - about: GNU grep, egrep and fgrep
     name: grep
   - about: Command-line JSON processor
@@ -100,10 +99,20 @@ brew_packages:
     name: autojump
   - about: A simple, fast and user-friendly alternative to 'find'
     name: fd
+  - about: Modern replacement for 'ls'
+    name: exa
+  - about: Extremely fast alternative to 'grep'
+    name: ripgrep
   - about: Command-line fuzzy finder written in Go
     name: fzf
   - about: Nice alternative to 'cat' (has syntax hilighting)
     name: bat
+  - about: User-friendly cURL replacement (command-line HTTP client)
+    name: httpie
+  - about: Power of curl, ease of use of httpie
+    name: curlie
+  - about: Terminal file manager
+    name: lf
 
 brew_casks:
   # GUIs
