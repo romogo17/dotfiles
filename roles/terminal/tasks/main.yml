@@ -36,23 +36,18 @@
     - privileged
 
 - name: Fish configuration
-  block:
-    - name: Ensure the configuration directory for Fish exists
-      ansible.builtin.file:
-        path: ~/.config/fish
-        state: directory
-        mode: 0755
-
-    - name: Copy the Fish configuration
-      ansible.builtin.copy:
-        dest: ~/.config/fish
-        src: fish/
+  ansible.builtin.include_tasks: recursive_symlink.yml
+  vars:
+    config:
+      src_dir: fish/
+      dest_dir: ~/.config/fish
 
 - name: Starship configuration
-  ansible.builtin.copy:
-    dest: ~/.config
-    src: starship/
-    mode: 0644
+  ansible.builtin.include_tasks: recursive_symlink.yml
+  vars:
+    config:
+      src_dir: starship/
+      dest_dir: ~/.config
 
 - name: Install FZF
   command: "{{ brew_prefix }}/opt/fzf/install --no-zsh --no-bash --all"
@@ -60,27 +55,15 @@
     creates: ~/.config/fish/functions/fzf_key_bindings.fish
 
 - name: Alacritty configuration
-  block:
-    - name: Ensure the configuration directory for Alacritty exists
-      ansible.builtin.file:
-        path: ~/.config/alacritty
-        state: directory
-        mode: 0755
-
-    - name: Copy the Alacritty configuration
-      ansible.builtin.copy:
-        dest: ~/.config/alacritty
-        src: alacritty/
+  ansible.builtin.include_tasks: recursive_symlink.yml
+  vars:
+    config:
+      src_dir: alacritty/
+      dest_dir: ~/.config/alacritty
 
 - name: Tmux configuration
-  block:
-    - name: Ensure the configuration directory for Tmux exists
-      ansible.builtin.file:
-        path: ~/.config/tmux
-        state: directory
-        mode: 0755
-
-    - name: Copy the Tmux configuration
-      ansible.builtin.copy:
-        dest: ~/.config/tmux
-        src: tmux/
+  ansible.builtin.include_tasks: recursive_symlink.yml
+  vars:
+    config:
+      src_dir: tmux/
+      dest_dir: ~/.config/tmux
