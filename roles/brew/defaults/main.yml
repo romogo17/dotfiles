@@ -67,6 +67,8 @@ brew_packages:
   # Containers
   - about: CLI used to interact with Kubernetes - 'kubectl'
     name: kubernetes-cli
+  - about: Package manager for kubectl plugins
+    name: krew
   - about: Run local Kubernetes cluster in Docker
     name: kind
   - about: The package manager for Kubernetes - 'helm'
@@ -118,6 +120,8 @@ brew_casks:
   # GUIs
   - about: GPU-accelerated terminal emulator
     name: homebrew/cask/alacritty
+  - about: Free online diagram software
+    name: homebrew/cask/drawio
 
   # Fonts
   - about: Free monospaced font with programming ligatures
