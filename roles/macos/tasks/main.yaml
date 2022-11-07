@@ -117,8 +117,8 @@
 - name: Save screenshots to the desktop
   community.general.osx_defaults:
     domain: com.apple.screencapture
-    key: location
-    value: "$HOME/Desktop"
+    key: target
+    value: "preview"
 
 - name: Save screenshots in PNG format (other options are BMP, GIF, JPG, PDF, TIFF)
   community.general.osx_defaults:
