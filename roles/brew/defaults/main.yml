@@ -87,6 +87,10 @@ brew_packages:
     name: aquasecurity/trivy/trivy
   - about: A set of continuous and progressive delivery solutions for Kubernetes that are open and extensible
     name: fluxcd/tap/flux
+  - about: A vulnerability scanner for container images and filesystems
+    name: anchore/grype/grype
+  - about: A tool for generating a Software Bill of Materials (SBOM) from container images and filesystems
+    name: anchore/syft/syft
 
   # AWS
   - about: Useful for authentication to EKS from kubectl
