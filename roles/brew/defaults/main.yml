@@ -39,6 +39,8 @@ brew_packages:
   # Languages
   - about: Automate deployment, configuration, and upgrading
     name: ansible
+  - about: Checks ansible playbooks for practices and behaviour
+    name: ansible-lint
   - about: Tool to build, change, and version infrastructure
     name: terraform
   - about: Open source programming language to build simple/reliable/efficient software
