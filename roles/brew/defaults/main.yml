@@ -53,6 +53,8 @@ brew_packages:
     name: python@3.11
   - about: Python dependency management tool
     name: pipenv
+  - about: Python package management tool
+    name: poetry
   - about: Python version management
     name: pyenv
   - about: Open-source build and test tool made by Google
