@@ -30,7 +30,7 @@ brew_packages:
     name: nmap
     links:
       - dest: ~/.local/bin/nc
-        src: /usr/local/bin/ncat
+        src: "{{ brew_prefix }}/bin/ncat"
   - about: Traceroute implementation using TCP packets
     name: tcptraceroute
   - about: CLI tool that moves files or folder to the trash
@@ -51,6 +51,9 @@ brew_packages:
     name: node@18
   - about: Interpreted, interactive, object-oriented programming language
     name: python@3.11
+    links:
+      - dest: ~/.local/bin/python
+        src: "{{ brew_prefix }}/bin/python3"
   - about: Python dependency management tool
     name: pipenv
   - about: Python package management tool
