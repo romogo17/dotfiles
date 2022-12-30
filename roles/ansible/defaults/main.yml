@@ -11,6 +11,9 @@ ansible_config:
   - section: defaults
     option: bin_ansible_callbacks
     value: True
+  - section: defaults
+    option: interpreter_python
+    value: auto_silent
 
   - section: galaxy
     option: server_list
