@@ -23,3 +23,6 @@ fish_add_path $HOME/.cargo/bin
 
 # Node.js
 fish_add_path $(brew --prefix)/opt/node*/bin/
+
+# Visual Studio Code
+fish_add_path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
