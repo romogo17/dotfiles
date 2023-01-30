@@ -106,6 +106,10 @@ brew_packages:
     name: aws-iam-authenticator
   - about: A CLI tool which recommends EC2 instance types based on resource criteria like vcpus and memory
     name: aws/tap/ec2-instance-selector
+  - about: A CLI tool for local development and testing of Serverless applications
+    name: aws/tap/aws-sam-cli
+  - about: A CLI tool which simplifies access to cloud roles and allows multiple cloud accounts to be opened in your web browser simultaneously.
+    name: common-fate/granted/granted
 
   # Next Generation CLIs
   - about: Shell extension to jump to frequently used directories
