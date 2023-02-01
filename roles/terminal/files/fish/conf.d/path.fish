@@ -1,8 +1,5 @@
-# Local binaries
-fish_add_path --prepend $HOME/.local/bin
-
-# Homebrew executables
-fish_add_path --prepend $(brew --prefix)/bin
+# Local & Homebrew binaries
+fish_add_path --move ~/.local/bin $(brew --prefix)/bin
 
 # Go
 set -gx GOROOT $(brew --prefix)/opt/go/libexec
