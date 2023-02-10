@@ -1,5 +1,7 @@
 set -gx EDITOR code
 set -gx HOMEBREW_EDITOR code
+set -gx KUBE_EDITOR nvim
+set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
 set -gx DOTFILES $HOME/.dotfiles
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
