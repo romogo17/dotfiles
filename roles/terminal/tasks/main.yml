@@ -9,14 +9,6 @@
       - tmux-mem-cpu-load
     state: present
 
-# - name: Ensure ZSH is installed
-#   community.general.homebrew:
-#     name:
-#       - zsh
-#       - zsh-completions
-#       - zsh-syntax-highlighting
-#     state: present
-
 # Alternate commands that take care of the following tasks
 #   echo $(brew --prefix)/bin/fish | sudo tee -a /etc/shells
 #   chsh -s $(brew --prefix)/bin/fish

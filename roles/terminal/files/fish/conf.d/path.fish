@@ -18,6 +18,9 @@ fish_add_path $JAVA_HOME/bin
 # Rust
 fish_add_path $HOME/.cargo/bin
 
+# Docker
+fish_add_path $HOME/.docker/bin
+
 # Node.js
 fish_add_path $(brew --prefix)/opt/node*/bin/
 
