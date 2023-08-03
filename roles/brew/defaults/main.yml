@@ -45,8 +45,6 @@ brew_packages:
     name: terraform
   - about: Open source programming language to build simple/reliable/efficient software
     name: go
-  - about: Safe, concurrent, practical language
-    name: rust
   - about: Platform built on V8 to build network applications
     name: node@18
   - about: Interpreted, interactive, object-oriented programming language
@@ -56,8 +54,6 @@ brew_packages:
         src: "{{ brew_prefix }}/bin/python3"
   - about: Python dependency management tool
     name: pipenv
-  - about: Python package management tool
-    name: poetry
   - about: Python version management
     name: pyenv
   - about: Open-source build and test tool made by Google
