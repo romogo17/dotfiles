@@ -137,3 +137,7 @@ brew_casks:
   # Fonts
   - about: Free monospaced font with programming ligatures
     name: homebrew/cask-fonts/font-fira-code
+  - about: JetBrainsMono Nerd Font
+    name: homebrew/cask-fonts/font-jetbrains-mono-nerd-font
+  - about: Fira Code Nerd Font
+    name: homebrew/cask-fonts/font-fira-code-nerd-font
