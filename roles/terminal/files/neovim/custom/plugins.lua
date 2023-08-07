@@ -7,10 +7,17 @@ local plugins = {
     end
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = { "terraform" },
+    },
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
         "rust-analyzer",
+        "terraform-ls"
       }
     }
   },
