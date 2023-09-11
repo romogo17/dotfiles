@@ -2,6 +2,8 @@
     name = {{ git.defaults.name }}
     email = {{ git.defaults.email }}
     signingkey = {{ git.defaults.signingkey }}
+[alias]
+  sweep = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 [color]
     ui = auto
 [core]
