@@ -46,7 +46,7 @@ brew_packages:
   - about: Open source programming language to build simple/reliable/efficient software
     name: go
   - about: Platform built on V8 to build network applications
-    name: node@18
+    name: node@20
   - about: Interpreted, interactive, object-oriented programming language
     name: python@3.11
     links:
