@@ -35,6 +35,10 @@ brew_packages:
     name: tcptraceroute
   - about: CLI tool that moves files or folder to the trash
     name: trash
+  - about: Handy way to save and run project-specific commands
+    name: just
+  - about: Load/unload environment variables based on $PWD
+    name: direnv
 
   # Languages
   - about: Automate deployment, configuration, and upgrading
