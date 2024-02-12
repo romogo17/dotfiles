@@ -3,7 +3,7 @@
     email = {{ git.defaults.email }}
     signingkey = {{ git.defaults.signingkey }}
 [alias]
-  sweep = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+    sweep = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 [color]
     ui = auto
 [core]
@@ -18,18 +18,21 @@
 [commit]
     gpgsign = true
 [fetch]
-    {# Fetch will automatically behave as if the --prune option was given on the command line #}
+    # Fetch will automatically behave as if the --prune option was given on the command line
 	prune = true
 [rebase]
-    {# If set to true enable --autosquash option by default #}
+    # If set to true enable --autosquash option by default
     autoSquash = true
-    {# Automatically create a temporary stash entry before the operation begins, and apply it after the operation ends #}
+    # Automatically create a temporary stash entry before the operation begins, and apply it after the operation ends
     autoStash = true
+[rerere]
+    # Reuse recorded resolution. It allows you to ask Git to remember how you've resolved a hunk conflict so that the next time it sees the same conflict, Git can resolve it for you automatically.
+    enabled = true
 [push]
-    {# Assume --set-upstream on default push when no upstream tracking exists for the current branch #}
+    # Assume --set-upstream on default push when no upstream tracking exists for the current branch
     autoSetupRemote = true
 [pull]
-    {# Rebase branches on top of the fetched branch, instead of merging the default branch from the default remote when "git pull" is run #}
+    # Rebase branches on top of the fetched branch, instead of merging the default branch from the default remote when "git pull" is run
     rebase = true
 [init]
     defaultBranch = main
