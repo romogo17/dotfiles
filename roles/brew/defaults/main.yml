@@ -122,6 +122,8 @@ brew_packages:
     name: ripgrep
   - about: Command-line fuzzy finder written in Go
     name: fzf
+  - about: Shell extension to navigate your filesystem faster
+    name: zoxide
   - about: Nice alternative to 'cat' (has syntax hilighting)
     name: bat
   - about: User-friendly cURL replacement (command-line HTTP client)
