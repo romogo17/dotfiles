@@ -36,7 +36,7 @@
     rebase = true
 [init]
     defaultBranch = main
-{% if git.work.dir is defined %}
-[includeIf "gitdir:~/{{ git.work.dir }}/"]
+{% for work_dir in git.work.dirs %}
+[includeIf "gitdir:~/{{ work_dir }}/"]
     path = ~/.gitconfig-work
-{% endif %}
+{% endfor %}

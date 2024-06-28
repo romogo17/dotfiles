@@ -10,4 +10,6 @@ git:
     name: Mora, Roberto
     email: Roberto.Mora@experian.com
     signingkey: BF514DE4776F446F
-    dir: WDev
+    dirs:
+      - WDev
+      - Work
