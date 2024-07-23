@@ -338,7 +338,7 @@
   community.general.osx_defaults:
     domain: com.apple.dock
     key: largesize
-    type: float
+    type: int
     value: 60
 
 - name: Minimize windows into their application's icon

@@ -50,6 +50,7 @@
     repo: https://github.com/catppuccin/alacritty.git
     dest: ~/.config/alacritty/catppuccin
     depth: 1
+    version: yaml
 
 - name: Alacritty configuration
   ansible.builtin.include_tasks: recursive_symlink.yml
@@ -70,16 +71,9 @@
     config:
       src_dir: tmux/
       dest_dir: ~/.config/tmux
-
-- name: NvChad
-  ansible.builtin.git:
-    repo: https://github.com/NvChad/NvChad
-    dest: ~/.config/nvim
-    depth: 1
-
-- name: Neovim Configuration
-  ansible.builtin.include_tasks: recursive_symlink.yml
-  vars:
-    config:
-      src_dir: neovim/
-      dest_dir: ~/.config/nvim/lua
+# - name: Neovim Configuration
+#   ansible.builtin.include_tasks: recursive_symlink.yml
+#   vars:
+#     config:
+#       src_dir: neovim/
+#       dest_dir: ~/.config/nvim/lua
