@@ -21,59 +21,52 @@
         path: /etc/shells
         state: present
         line: "{{ brew_prefix }}/bin/fish"
-    - name: Setup the default shell for the {{ ansible_env.USER }} user
+    - name: Setup the default shell for {{ ansible_env.USER }}
       ansible.builtin.user:
         name: "{{ ansible_env.USER }}"
         shell: "{{ brew_prefix }}/bin/fish"
 
 - name: Fish configuration
-  ansible.builtin.include_tasks: recursive_symlink.yml
-  vars:
-    config:
-      src_dir: fish/
-      dest_dir: ~/.config/fish
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/fish"
+    dest: ~/.config/fish
+    state: link
+    force: true
+    mode: 0755
 
 - name: Starship configuration
-  ansible.builtin.include_tasks: recursive_symlink.yml
-  vars:
-    config:
-      src_dir: starship/
-      dest_dir: ~/.config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/starship/starship.toml"
+    dest: ~/.config/starship.toml
+    state: link
+    force: true
+    mode: 0644
 
 - name: Install FZF
-  command: "{{ brew_prefix }}/opt/fzf/install --no-zsh --no-bash --all"
+  ansible.builtin.command: "{{ brew_prefix }}/opt/fzf/install --no-zsh --no-bash --all"
   args:
     creates: ~/.config/fish/functions/fzf_key_bindings.fish
 
-- name: Alacritty theme
-  ansible.builtin.git:
-    repo: https://github.com/catppuccin/alacritty.git
-    dest: ~/.config/alacritty/catppuccin
-    depth: 1
-    version: yaml
-
 - name: Alacritty configuration
-  ansible.builtin.include_tasks: recursive_symlink.yml
-  vars:
-    config:
-      src_dir: alacritty/
-      dest_dir: ~/.config/alacritty
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/alacritty"
+    dest: ~/.config/alacritty
+    state: link
+    force: true
+    mode: 0755
 
 - name: Tmux Plugin Manager
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tpm
     dest: ~/.tmux/plugins/tpm
     depth: 1
+  tags:
+    - skip_ansible_lint
 
 - name: Tmux configuration
-  ansible.builtin.include_tasks: recursive_symlink.yml
-  vars:
-    config:
-      src_dir: tmux/
-      dest_dir: ~/.config/tmux
-# - name: Neovim Configuration
-#   ansible.builtin.include_tasks: recursive_symlink.yml
-#   vars:
-#     config:
-#       src_dir: neovim/
-#       dest_dir: ~/.config/nvim/lua
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/tmux"
+    dest: ~/.config/tmux
+    state: link
+    force: true
+    mode: 0755

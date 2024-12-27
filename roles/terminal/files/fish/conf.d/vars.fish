@@ -1,3 +1,4 @@
+set -gx XDG_CONFIG_DIR $HOME/.config
 set -gx EDITOR code
 set -gx HOMEBREW_EDITOR code
 set -gx KUBE_EDITOR nvim
