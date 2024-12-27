@@ -137,6 +137,8 @@ brew_casks:
   # GUIs
   - about: GPU-accelerated terminal emulator
     name: homebrew/cask/alacritty
+  - about: Terminal emulator that uses platform-native UI and GPU acceleration
+    name: homebrew/cask/ghostty
   - about: Free online diagram software
     name: homebrew/cask/drawio
 
