@@ -5,11 +5,11 @@ git:
   defaults:
     name: Roberto Mora
     email: romogo17@gmail.com
-    signingkey: 9BB0B0BE9A2CBAE3
+    signingkey: 9F6D8C373B40B768
   work:
     name: Mora, Roberto
     email: Roberto.Mora@experian.com
-    signingkey: BF514DE4776F446F
+    signingkey: 9F6D8C373B40B768
     dirs:
       - WDev
       - Work

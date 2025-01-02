@@ -10,7 +10,6 @@
 - name: Ensure GPG is installed
   community.general.homebrew:
     name:
-      - gpg2
       - gnupg
       - pinentry-mac
     state: present
@@ -26,7 +25,7 @@
     - git.work.name is defined
     - git.work.email is defined
     - git.work.signingkey is defined
-    - git.work.dir is defined
+    - git.work.dirs is defined
   ansible.builtin.template:
     src: gitconfig-work.j2
     dest: ~/.gitconfig-work

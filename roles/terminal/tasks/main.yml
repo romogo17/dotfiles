@@ -78,3 +78,19 @@
     state: link
     force: true
     mode: 0755
+
+- name: GnuPG configuration
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/gnupg"
+    dest: ~/.gnupg
+    state: link
+    force: true
+    mode: 0700
+
+- name: SSH configuration
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/ssh"
+    dest: ~/.ssh
+    state: link
+    force: true
+    mode: 0700

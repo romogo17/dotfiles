@@ -1,0 +1,7 @@
+*
+!config
+!id_rsa_yubikey.pub
+!.gitignore
+
+!*/
+!config.d/.gitkeep
