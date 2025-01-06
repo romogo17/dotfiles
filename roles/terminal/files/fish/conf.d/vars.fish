@@ -1,4 +1,9 @@
-set -gx XDG_CONFIG_DIR $HOME/.config
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx XDG_STATE_HOME $HOME/.local/state
+set -gx XDG_BIN_HOME $HOME/.local/bin
+set -gx XDG_CACHE_HOME $HOME/.cache
+
 set -gx EDITOR code
 set -gx HOMEBREW_EDITOR code
 set -gx KUBE_EDITOR nvim
