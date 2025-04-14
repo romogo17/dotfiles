@@ -55,6 +55,14 @@
     force: true
     mode: 0755
 
+- name: Nvim configuration
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/nvim"
+    dest: ~/.config/nvim
+    state: link
+    force: true
+    mode: 0755
+
 - name: Alacritty configuration
   ansible.builtin.file:
     src: "{{ role_path }}/files/alacritty"
