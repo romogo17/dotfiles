@@ -1,5 +1,5 @@
 # Local & Homebrew binaries
-fish_add_path --move ~/.local/bin $(brew --prefix)/bin
+fish_add_path --move ~/.local/bin $(brew --prefix)/bin /usr/local/bin
 
 # Go
 set -gx GOROOT $(brew --prefix)/opt/go/libexec
