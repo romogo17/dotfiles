@@ -1,3 +1,12 @@
+brew_taps:
+  - name: FairwindsOps/tap
+  - name: aquasecurity/trivy
+  - name: fluxcd/tap
+  - name: anchore/syft
+  - name: anchore/grype
+  - name: aws/tap
+  - name: common-fate/granted
+
 brew_packages:
   # Essentials
   - about: GNU utilities
@@ -68,8 +77,6 @@ brew_packages:
   # Utility CLIs
   - about: Command-line benchmarking tool
     name: hyperfine
-  - about: Download YouTube videos from the command-line
-    name: youtube-dl
 
   # Containers
   - about: CLI used to interact with Kubernetes - 'kubectl'
@@ -80,8 +87,6 @@ brew_packages:
     name: kind
   - about: The package manager for Kubernetes - 'helm'
     name: helm
-  - about: CLI used to interact with Openshift - 'oc'
-    name: openshift-cli
   - about: Traverses a Kubernetes manifest to add, remove or update configuration options without forking
     name: kustomize
   - about: Podman is a daemonless container engine for developing, managing, and running OCI Containers
@@ -107,7 +112,7 @@ brew_packages:
   - about: A CLI tool which recommends EC2 instance types based on resource criteria like vcpus and memory
     name: aws/tap/ec2-instance-selector
   - about: A CLI tool for local development and testing of Serverless applications
-    name: aws/tap/aws-sam-cli
+    name: aws-sam-cli
   - about: A CLI tool which simplifies access to cloud roles and allows multiple cloud accounts to be opened in your web browser simultaneously.
     name: common-fate/granted/granted
 
@@ -116,8 +121,8 @@ brew_packages:
     name: autojump
   - about: A simple, fast and user-friendly alternative to 'find'
     name: fd
-  - about: Modern replacement for 'ls'
-    name: exa
+  - about: Modern, maintained replacement for 'ls'
+    name: eza
   - about: Extremely fast alternative to 'grep'
     name: ripgrep
   - about: Command-line fuzzy finder written in Go
@@ -143,9 +148,7 @@ brew_casks:
     name: homebrew/cask/drawio
 
   # Fonts
-  - about: Free monospaced font with programming ligatures
-    name: homebrew/cask-fonts/font-fira-code
   - about: JetBrainsMono Nerd Font
-    name: homebrew/cask-fonts/font-jetbrains-mono-nerd-font
+    name: font-jetbrains-mono-nerd-font
   - about: Fira Code Nerd Font
-    name: homebrew/cask-fonts/font-fira-code-nerd-font
+    name: font-fira-code-nerd-font

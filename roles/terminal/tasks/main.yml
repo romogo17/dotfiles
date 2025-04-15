@@ -7,6 +7,7 @@
       - starship
       - tmux
       - tmux-mem-cpu-load
+      - fzf
     state: present
 
 # Alternate commands that take care of the following tasks
@@ -41,11 +42,6 @@
     state: link
     force: true
     mode: 0644
-
-- name: Install FZF
-  ansible.builtin.command: "{{ brew_prefix }}/opt/fzf/install --no-zsh --no-bash --all"
-  args:
-    creates: ~/.config/fish/functions/fzf_key_bindings.fish
 
 - name: Ghostty configuration
   ansible.builtin.file:

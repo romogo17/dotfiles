@@ -12,6 +12,8 @@
     name:
       - gnupg
       - pinentry-mac
+      - ykman
+      - yubikey-personalization
     state: present
 
 - name: Template the .gitconfig file (default)
