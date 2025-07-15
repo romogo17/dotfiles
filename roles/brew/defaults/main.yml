@@ -93,6 +93,8 @@ brew_packages:
     name: podman
   - about: Tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your OCI image
     name: dive
+  - about: Tool for interacting with remote images and registries
+    name: crane
   - about: CLI that allows you to easily find Kubernetes roles and cluster roles bound to any user, service account, or group name
     name: FairwindsOps/tap/rbac-lookup
   - about: Simple and comprehensive vulnerability/misconfiguration scanner for containers and other artifacts
